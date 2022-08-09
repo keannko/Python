@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+from kivy.app import App
+from kivy.lang import Builder
+from kivy.uix.boxlayout import BoxLayout
+from kivy.properties import Str
+=======
 from socket import socket
 import threading
 from kivy.app import App
@@ -9,10 +15,20 @@ from kivy.uix.textinput import TextInput
 import threading
 import socket
 from kivy.clock import mainthread
+>>>>>>> 4a61f9d8511244944d5780374aa0accc8cf716af
 
 
 KV = """
 MyBL:
+<<<<<<< HEAD
+        Label:
+                font_size: "30sp"
+                text: root.data_label
+"""
+
+class MyBL(BoxLayout):
+    data_label = StringPropety("Треугольник")
+=======
 
     orientation: "vertical"
     size_hint: (0.95,0.95)
@@ -87,15 +103,23 @@ class MyBL(BoxLayout):
     @mainthread
     def set_data_label(self, data):
         self.data_label += str(data) + "\n"
+>>>>>>> 4a61f9d8511244944d5780374aa0accc8cf716af
 
 
 class MyApp(App):
     running = True
 
     def build(self):
+<<<<<<< HEAD
+        return  Builder.load_string(KV)
+
+    def on_stop(self):
+        self.running = False
+=======
         return Builder.load_string(KV)
 
     def on_stop(self):
         self.running = False
 
 MyApp().run()
+>>>>>>> 4a61f9d8511244944d5780374aa0accc8cf716af
